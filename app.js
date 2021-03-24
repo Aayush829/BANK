@@ -1,6 +1,6 @@
 "use strict";
 var express = require('express');
-var port = Process.env.PORT || 3000 ;
+var PORT = process.env.PORT || 3000 ;
 var bodyParser = require("body-parser");
 var app = express();
 var xmlparser = require('express-xml-bodyparser');
