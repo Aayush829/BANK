@@ -1,6 +1,6 @@
 "use strict";
 var express = require('express');
-var PORT = process.env.PORT || 3000 ;
+var port = process.env.PORT || 3000 ;
 var bodyParser = require("body-parser");
 var app = express();
 var xmlparser = require('express-xml-bodyparser');
@@ -416,6 +416,8 @@ app.post('/transfer',requireLogin,  function(req, resp) {
 
 
 
-server.listen(port,()=>{  // do not add localhost here if you are deploying it
+app.listen(port,()=>{  // do not add localhost here if you are deploying it
     console.log("server listening to port "+port);
 });
+
+
