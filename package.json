@@ -1,0 +1,21 @@
+{
+  "name": "bank-4",
+  "version": "1.0.0",
+  "description": "Assignment 2 - Web Security Student: Farid Aalam",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "client-sessions": "^0.8.0",
+    "express": "^4.17.1",
+    "express-xml-bodyparser": "^0.3.0",
+    "helmet-csp": "^3.3.1",
+    "mongoose": "^5.12.1",
+    "password-validator": "^5.1.1",
+    "xss-filters": "^1.2.7"
+  }
+}
