@@ -195,14 +195,17 @@ app.post('/signup', function(req, resp) {
 						});
 
 						newCust.save(function(err, Accountx){
-							if(err)
+            
+
+							if(err) 
 								console.log(err);
 							else
 								console.log('Success');
 						});
 
 
-					resp.send("<success>You are registered,You can login now.</success>");
+          resp.send("<success>You are registered,Now upload your documents.</success>");
+          
 
 
 				}else{
