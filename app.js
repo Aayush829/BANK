@@ -10,12 +10,15 @@ const csp = require('helmet-csp');
 var xssFilters = require('xss-filters');
 var passwordValidator = require('password-validator');
 var pSchema = new passwordValidator();
+var initRoutes = require("./routes/kyc");
 //parsers
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(xmlparser());
 xmlparser.regexp = /^text\/xml$/i;
+app.use(express.urlencoded({ extended: true }));
+initRoutes(app);
 
 //password schema
 pSchema
@@ -79,6 +82,13 @@ app.get("/", function(req,resp){
 		resp.sendFile(__dirname + "/index.html");	
 	
 });
+
+app.get("/kyc", function(req,resp){
+	
+  resp.sendFile(__dirname + "/kyc.html");	
+
+});
+
 app.get("/styles.css", function(req,resp){
 	
 		resp.sendFile(__dirname + "/styles.css");	
@@ -163,7 +173,8 @@ app.post('/signup', function(req, resp) {
 	
 	resp.set('Content-Type', 'text/xml');
 	if(!newUser.username[0] || !newUser.password[0] || !newUser.address1[0] || !newUser.address2[0]){
-		resp.send("<success>Missing field in the form. Please try again</success>");
+    resp.send("<success>Missing field in the form. Please try again</success>");
+    
 	} else if (!(pSchema.validate(newUser.password[0]))) {
 		resp.send("<success>Invalid Password.</success>");		
 	} else {
@@ -419,5 +430,3 @@ app.post('/transfer',requireLogin,  function(req, resp) {
 app.listen(port,()=>{  // do not add localhost here if you are deploying it
     console.log("server listening to port "+port);
 });
-
-

@@ -1,7 +1,7 @@
 {
   "name": "bank-4",
   "version": "1.0.0",
-  "description": "Assignment 2 - Web Security Student: Farid Aalam",
+  "description": "Aayush Pandey",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,12 +10,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "client-sessions": "^0.8.0",
+    "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
+    "express-redirect": "^1.2.2",
     "express-xml-bodyparser": "^0.3.0",
     "helmet-csp": "^3.3.1",
-    "mongoose": "^5.12.1",
+    "mongoose": "^5.12.3",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
     "password-validator": "^5.1.1",
+    "serve-favicon": "^2.5.0",
     "xss-filters": "^1.2.7"
   }
 }
